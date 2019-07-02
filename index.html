@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Scratchpad</title>
+  <style>
+    body {
+      margin: 16px;
+      box-sizing: border-box;
+    }
+    h1#title {
+      color: teal;
+      user-select: none;
+    }
+    #main {
+      height: 60vh;
+      width: 100%;
+      color: #002d4d;
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Scratchpad</h1>
+  <hr />
+  <div id="main" contenteditable="true"></div>
+  <script src="/MarkdownIME.min.js"></script>
+  <script>
+    var main = document.getElementById('main')
+    var SCRATCHPAD_CONTENT = 'SCRATCHPAD_CONTENT'
+    main.focus()
+    main.oninput = function() {
+      localStorage[SCRATCHPAD_CONTENT] = main.innerHTML
+    }
+    main.innerHTML = localStorage[SCRATCHPAD_CONTENT] || ''
+    window.onclick = function() {
+      main.focus()
+    }
+    MarkdownIME.Enhance(main)
+    if('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('./sw.js')
+    }
+  </script>
+</body>
+</html>
