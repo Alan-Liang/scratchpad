@@ -2,7 +2,7 @@ var cacheName = 'Scratchpad-v0.0.1'
 self.addEventListener('install', function(e) {
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
-      return cache.addAll(['/', '/MarkdownIME.min.js'])
+      return cache.addAll(['/', '/dist/main.js'])
     })
   )
 })

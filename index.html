@@ -36,24 +36,8 @@
   <div id="container">
     <h1 id="title">Scratchpad</h1>
     <hr />
-    <div id="main" contenteditable="true"></div>
+    <textarea id="main"></textarea>
   </div>
-  <script src="/MarkdownIME.min.js"></script>
-  <script>
-    var main = document.getElementById('main')
-    var SCRATCHPAD_CONTENT = 'SCRATCHPAD_CONTENT'
-    main.focus()
-    main.oninput = function() {
-      localStorage[SCRATCHPAD_CONTENT] = main.innerHTML
-    }
-    main.innerHTML = localStorage[SCRATCHPAD_CONTENT] || ''
-    window.onclick = function() {
-      main.focus()
-    }
-    MarkdownIME.Enhance(main)
-    if('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('./sw.js')
-    }
-  </script>
+  <script src="/dist/main.js"></script>
 </body>
 </html>

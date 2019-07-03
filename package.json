@@ -1,0 +1,32 @@
+{
+  "name": "scratchpad",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alan-Liang/scratchpad.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "clean": "rm -rf dist"
+  },
+  "author": "Alan-Liang",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/Alan-Liang/scratchpad/issues"
+  },
+  "homepage": "https://github.com/Alan-Liang/scratchpad#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "codemirror": "^5.48.0",
+    "css-loader": "^3.0.0",
+    "file-loader": "^4.0.0",
+    "hypermd": "^0.3.11",
+    "katex": "^0.10.2",
+    "marked": "^0.6.3",
+    "style-loader": "^0.23.1",
+    "url-loader": "^2.0.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
+}
