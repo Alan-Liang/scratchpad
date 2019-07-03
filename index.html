@@ -9,23 +9,35 @@
     body {
       margin: 16px;
       box-sizing: border-box;
+      text-align: center;
     }
     h1#title {
       color: teal;
       user-select: none;
     }
     #main {
-      height: 60vh;
       width: 100%;
       color: #002d4d;
       outline: none;
     }
+    #container {
+      width: 100%;
+      text-align: start;
+      display: inline-block;
+    }
+    @media(min-width: 672px) {
+      #container {
+        width: 640px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1 id="title">Scratchpad</h1>
-  <hr />
-  <div id="main" contenteditable="true"></div>
+  <div id="container">
+    <h1 id="title">Scratchpad</h1>
+    <hr />
+    <div id="main" contenteditable="true"></div>
+  </div>
   <script src="/MarkdownIME.min.js"></script>
   <script>
     var main = document.getElementById('main')
